@@ -12,36 +12,40 @@ class CalculatorController extends Controller
     }
 
     public function calculator(Request $request){
-        $weight = $request->input('choice');
-        $height = $request->input('choice');
-        $age = $request->input('choice');
+        $weight = $request->input('weight');
+        $height = $request->input('height');
+        $age = $request->input('age');
 
-        $gender = $request->input('choice');
-        $activityEasy = $request->input('choice'); // * 1.375
-        $activityMedium = $request->input('choice'); // * 1.55
-        $activityHard = $request->input('choice'); // * 1.7
+        $gender = $request->input('gender');
+        $activity = $request->input('activity');
 
-        $bpm = $request->input('choice');
-        $activity = $request->input('choice');
-
-        if($bpm == 'man' and $activity == 'easy' ){
+        if ($gender == 'man' && $activity == 'easy' ){
             $result = ((88.36 + (13.4 * $weight) + (4.8 * $height) - (5.7 * $age)) * 1.375);
         }
-        if($bpm == 'man' and $activity == 'medium' ){
+        if ($gender == 'man' && $activity == 'medium' ){
             $result = ((88.36 + (13.4 * $weight) + (4.8 * $height) - (5.7 * $age)) * 1.55);
         }
-        if($bpm == 'man' and $activity == 'hard' ){
+        if ($gender == 'man' && $activity == 'hard' ){
             $result = ((88.36 + (13.4 * $weight) + (4.8 * $height) - (5.7 * $age)) * 1.7);
         }
-        if($bpm == 'women' and $activity == 'easy'){
+        if ($gender == 'women' && $activity == 'easy'){
             $result = ((447.6 + (9.2* $weight) + (3.1* $height) - (4.3 * $age)) * 1.375);
         }
-        if($bpm == 'women' and $activity == 'medium'){
+        if ($gender == 'women' && $activity == 'medium'){
             $result = ((447.6 + (9.2* $weight) + (3.1* $height) - (4.3 * $age)) * 1.55);
         }
-        if($bpm == 'women' and $activity == 'easy'){
+        if ($gender == 'women' && $activity == 'easy'){
             $result = ((447.6 + (9.2* $weight) + (3.1* $height) - (4.3 * $age)) * 1.7);
         }
+        // return view('health', ['result' => $result]);
+        $validation = $request->validate([
+            'weight'=>'required|min:2|max:3',
+            'height'=>'required|min:3|max:3',
+            'age'=>'required|min:1|max:2',
+            'gender'=>'required',
+            'activity'=>'required'
+        ]);
+        return $result;
 
 
         // Генерируем случайный ход для компьютера
@@ -74,6 +78,6 @@ class CalculatorController extends Controller
     //     ]);
 
     //     // Возвращаем результат игры в представление
-    //     return view('game', ['result' => $result]);
+        // return view('game', ['result' => $result]);
     }
 }

@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/calculator', [CalculatorController::class,'index'])->name('health.index');
+// Route::post('/calculator/post', function (Request $request) {
+//     return $input = $request->all();
+// })->name('contact-form');
 
-Route::get('/registration', [RegistrationController::class,'index'])->name('health.index');
+Route::post('/calculator/post', [CalculatorController::class, 'calculator'])->name('contact-form');
 
 
-Route::get('/', [HealthController::class,'index'])->name('health.index');
-Route::post('/post', [HealthController::class,'calculator'])->name('health.calculator');
+
+
+Route::get('/calculator', [CalculatorController::class,'index'
+])->name('health.index');
+Route::get('/registration', [RegistrationController::class,'index'
+])->name('health.index');
+Route::get('/', [HealthController::class,'index'
+])->name('health.index');
