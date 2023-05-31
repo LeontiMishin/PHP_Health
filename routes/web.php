@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/calculator', [CalculatorController::class,'index'])->name('health.index');
+
+Route::get('/registration', [RegistrationController::class,'index'])->name('health.index');
+
+
+Route::get('/', [HealthController::class,'index'])->name('health.index');
+Route::post('/post', [HealthController::class,'calculator'])->name('health.calculator');
