@@ -16,7 +16,7 @@
                     <div role="tabpanel" class="tab-pane fade in active" id="Section1">
                         <form class="form-horizontal">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">username</label>
+                                <label for="exampleInputEmail1">Username</label>
                                 <input type="email" class="form-control" id="Username">
                             </div>
                             <div class="form-group">

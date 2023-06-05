@@ -10,13 +10,16 @@ use Illuminate\Support\Facades\Route;
 //     return $input = $request->all();
 // })->name('contact-form');
 
-Route::post('/calculator/post', [CalculatorController::class, 'calculator'])->name('contact-form');
+Route::post('/calculator/post', [CalculatorResultController::class, 'calculator'])->name('contact-form');
+Route::get('/calculatorResult', [CalculatorResultController::class,'index'])->name('result.index');
+
+Route::get('/calculatorAll', [CalculatorResultController::class,'allData'])->name('resultdata.index');
 
 
 
 
-Route::get('/calculator', [CalculatorController::class,'index'
-])->name('health.index');
+// Route::get('/calculator', [CalculatorController::class,'index'
+// ])->name('health.index');
 Route::get('/registration', [RegistrationController::class,'index'
 ])->name('health.index');
 Route::get('/', [HealthController::class,'index'

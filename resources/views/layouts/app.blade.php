@@ -13,13 +13,13 @@
             <a class="nav-link active" href="/">Main</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/calculator">Calculator</a>
+            <a class="nav-link" href="/calculatorAll">Calculator</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/registration">Registration</a>
         </li>
     </ul>
-    
+
 </head>
 <body>
     @yield('content')
