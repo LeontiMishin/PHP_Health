@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 // })->name('contact-form');
 
 Route::post('/calculator/post', [CalculatorResultController::class, 'calculator'])->name('contact-form');
-Route::get('/calculatorResult', [CalculatorResultController::class,'index'])->name('result.index');
+Route::get('/calculatorResult', [ResultController::class,'index'])->name('result.index');
 
 Route::get('/calculatorAll', [CalculatorResultController::class,'allData'])->name('resultdata.index');
 

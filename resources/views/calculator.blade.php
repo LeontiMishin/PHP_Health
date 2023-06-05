@@ -50,12 +50,15 @@
 
             <div class=" form-block col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <form class="card">
-                    <h2>Результат:</h2>
+                    <h2>Данные (User):</h2>
 
-                    @foreach($data->all() as $el)
-                    <div class="alert alert-info">
-                        <h3>{{ $el->subject }}</h3>
-                    </div>
+
+                    @foreach($data as $el)
+                        <div class="alert alert-info">
+                            <h4>Result: {{ $el->result }} kcal</h4>
+                            <p>Weight: {{ $el->weight }}, height: {{ $el->height }}, age:{{ $el->age }}, gender: {{ $el->gender }}, activity: {{ $el->activity }}</p>
+                            <p><small>{{ $el->created_at}}</small></p>
+                        </div>
                     @endforeach
 
                     <!-- <h2></h2>

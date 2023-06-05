@@ -38,7 +38,7 @@ class CalculatorResultController extends Controller{
         if ($gender == 'women' && $activity == 'hard'){
             $result = ((447.6 + (9.2 * $weight) + (3.1 * $height) - (4.3 * $age)) * 1.7);
         }
-        // return view('health', ['result' => $result]);
+
         $validation = $request->validate([
             'weight'=>'required|min:2|max:3',
             'height'=>'required|min:3|max:3',
@@ -46,7 +46,6 @@ class CalculatorResultController extends Controller{
             'gender'=>'required',
             'activity'=>'required'
         ]);
-        // return $result;
 
         $calculator = new Calculator();
         $calculator->weight=$request->input('weight');
@@ -56,7 +55,7 @@ class CalculatorResultController extends Controller{
         $calculator->activity=$request->input('activity');
         $calculator->result=$result;
 
-        $calculator->save();
+        // $calculator->save();
 
         return redirect()->route('result.index');
     }
