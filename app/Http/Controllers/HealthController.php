@@ -14,8 +14,16 @@ class HealthController extends Controller
         // dd($card->all());
         return view('welcome', ['data' => $card->all()]);
         // return view('welcome');
-    }
 
+        }
+
+
+    // public function img(){
+    //     foreach(data as $el){
+    //         $result = mysql_query("$el");
+    //         header("Content-type: image/jpeg");
+    //     }
+// }
 
 
 //     public function cards(Request $request){

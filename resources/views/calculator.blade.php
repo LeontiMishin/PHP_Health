@@ -52,21 +52,21 @@
                 <form class="card">
                     <h2>Данные (User):</h2>
 
-
                     @foreach($data as $el)
                         <div class="alert alert-info">
                             <h4>Result: {{ $el->result }} kcal</h4>
                             <p>Weight: {{ $el->weight }}, height: {{ $el->height }}, age:{{ $el->age }}, gender: {{ $el->gender }}, activity: {{ $el->activity }}</p>
                             <p><small>{{ $el->created_at}}</small></p>
+                            <!-- <a href="#" class="badge badge-danger"><small>delete</small></a> -->
                         </div>
                     @endforeach
 
-                    <!-- <h2></h2>
-                    <h5>При таких введенных данных рекомендовано потребление 3500 ккал/день</h5>
-                    <h2></h2>
-                    <h5>Рекомендации:</h5>
-                    <h5>-Пакет Кardio</h5>
-                    <h5>-Пакет тренировок Gym</h5> -->
+                    <h2>Рекомендации:</h2>
+                    <br>
+                    <a href="/">-Пакет Кardio</a>
+                    <br>
+                    <a href="/">-Пакет тренировок Gym</a>
+                    <br>
                 </form>
             </div>
         </div>

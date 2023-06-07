@@ -16,8 +16,16 @@
             <a class="nav-link" href="/calculatorAll">Calculator</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/registration">Registration</a>
+            <a class="nav-link" href="/training">Training</a>
         </li>
+        <!-- <li class="nav-item">
+            <a class="nav-link" href="/registration">Registration</a>
+        </li> -->
+        @foreach($data as $el)
+        <li>
+        <span class="badge badge-light align-right">{{$el->id}}€</span>
+        </li>
+        @endforeach
     </ul>
 
 </head>

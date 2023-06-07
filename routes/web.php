@@ -15,6 +15,9 @@ Route::get('/calculatorResult', [ResultController::class,'index'])->name('result
 
 Route::get('/calculatorAll', [CalculatorResultController::class,'allData'])->name('resultdata.index');
 
+Route::get('/card', [CardController::class,'index'])->name('card.index');
+Route::get('/cardAll', [CardController::class,'allCard'])->name('resultcard');
+
 
 
 
@@ -24,3 +27,5 @@ Route::get('/registration', [RegistrationController::class,'index'
 ])->name('health.index');
 Route::get('/', [HealthController::class,'index'
 ])->name('health.index');
+Route::get('/training', [TrainingController::class,'index'
+])->name('training.index');
