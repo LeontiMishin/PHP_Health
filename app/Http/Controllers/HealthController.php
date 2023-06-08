@@ -11,8 +11,8 @@ class HealthController extends Controller
     public function index()
     {
         $card = new Card;
-        // dd($card->all());
-        return view('welcome', ['data' => $card->all()]);
+        $user = DB::table('users')->get();
+        return view('welcome', ['data' => $card->all()], ['user' => $user->all()]);
         // return view('welcome');
 
         }

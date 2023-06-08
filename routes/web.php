@@ -29,3 +29,5 @@ Route::get('/', [HealthController::class,'index'
 ])->name('health.index');
 Route::get('/training', [TrainingController::class,'index'
 ])->name('training.index');
+Route::get('/buyForm', [BuyController::class,'index'
+])->name('buyForm');

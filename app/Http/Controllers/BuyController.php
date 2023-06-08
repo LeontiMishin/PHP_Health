@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Calculator;
+use App\Models\Card;
 
-class ResultController extends Controller{
+
+
+class BuyController extends Controller{
 
     public function index(){
         $user = DB::table('users')->get();
-        return view('result', ['user' => $user->all()]);
+        $card = DB::table('cards')->get();
+
+        return view('buy', ['user' => $user->all()], ['card' => $card->all()]);
     }
 
 }

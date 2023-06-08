@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <h5 class="card-title"> {{ $el->header }} </h5>
                         <h3 class="card-text text-center"> {{ $el->price }}</h3>
-                        <a href="" id="{{ $el->id }}" class="badge badge-success">buy</a>
+                        <a href="/buyForm" id="{{ $el->id }}" class="badge badge-success">buy</a>
                         <p class="card-text"><small class="text-muted">{{ $el->created_at }}</small></p>
                     </div>
                 </div>

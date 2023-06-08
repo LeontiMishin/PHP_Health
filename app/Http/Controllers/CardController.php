@@ -7,14 +7,17 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Card;
 
 
+
 class CardController extends Controller{
 
     public function index(){
         return view('card');
     }
     public function allCard(){
-        $card = new Card;
+        $card = DB::table('cards')->get();
+        $user = DB::table('users')->get();
         $description = DB::table('carddescription')->get();
-        return view('card', ['data' => $card->all()], ['description' => $description->all()]);
+
+        return view('card', ['description' => $description->all()], ['data' => $card->all()]);
     }
 }

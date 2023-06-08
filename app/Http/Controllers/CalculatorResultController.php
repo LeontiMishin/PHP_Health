@@ -19,6 +19,7 @@ class CalculatorResultController extends Controller{
         $age = $request->input('age');
         $gender = $request->input('gender');
         $activity = $request->input('activity');
+        $idUser=1;
 
         if ($gender == 'man' && $activity == 'easy'){
             $result = ((88.36 + (13.4 * $weight) + (4.8 * $height) - (5.7 * $age)) * 1.375);
@@ -48,6 +49,7 @@ class CalculatorResultController extends Controller{
         ]);
 
         $calculator = new Calculator();
+        $calculator->idUser=$idUser;
         $calculator->weight=$request->input('weight');
         $calculator->height=$request->input('height');
         $calculator->age=$request->input('age');
@@ -55,13 +57,13 @@ class CalculatorResultController extends Controller{
         $calculator->activity=$request->input('activity');
         $calculator->result=$result;
 
-        // $calculator->save();
+        $calculator->save();
 
         return redirect()->route('result.index');
     }
     public function allData(){
+        $user = DB::table('users')->get();
         $calculator = new Calculator;
-        // dd($calculator->all());
-        return view('calculator', ['data' => $calculator->all()]);
+        return view('calculator', ['data' => $calculator->all()], ['user' => $user->all()]);
     }
 }

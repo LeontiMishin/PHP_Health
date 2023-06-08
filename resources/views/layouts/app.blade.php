@@ -21,9 +21,9 @@
         <!-- <li class="nav-item">
             <a class="nav-link" href="/registration">Registration</a>
         </li> -->
-        @foreach($data as $el)
+        @foreach($user as $el1)
         <li>
-        <span class="badge badge-light align-right">{{$el->id}}€</span>
+        <span class="badge badge-light align-right">{{$el1->money}}€</span>
         </li>
         @endforeach
     </ul>
